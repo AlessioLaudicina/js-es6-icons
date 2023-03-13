@@ -117,7 +117,6 @@ const boxIconDom = document.getElementById('box-icon')
 
 
 icons.forEach(icons => {
-    boxIconDom.innerHTML += `<div class="icon-card" style="color: ${icons.color}"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}"></i> <p>${icons.name}</p></div>`
-
-    
-})
+    boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name}</p></div>`
+ 
+});
