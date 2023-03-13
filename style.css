@@ -15,6 +15,9 @@ header{
     text-align: center;
     background-color: #28b1dc;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -23,6 +26,7 @@ header{
     margin: auto; 
     display: flex; 
     flex-wrap: wrap;
+    margin-top: 50px;
     
 }
 
