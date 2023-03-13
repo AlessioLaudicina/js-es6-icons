@@ -120,3 +120,51 @@ icons.forEach(icons => {
     boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name}</p></div>`
  
 });
+
+
+
+
+const selectElement = document.getElementById('tipo');
+
+selectElement.addEventListener('change', function() {
+    const typeIcon = icons.filter(function (type){
+        
+    })
+    switch(tipo){
+        case "user":
+        boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name} ></p></div>`
+            break;
+
+            case "animal":
+            boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name} </p></div>`
+
+            break;
+
+            case "vegetables":
+            boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name}</p></div>`
+
+            break; 
+    }
+    
+  
+});
+
+
+// creazione di un arrey di oggetti
+
+
+
+/*  switch(tipo){
+        case "user":
+        boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name} <p>${icons.type}</p></p></div>`
+            break;
+
+            case "animal":
+            cells = 81;
+            break;
+
+            case "vegetables":
+            cells = 49;
+            break; 
+    }
+ */
