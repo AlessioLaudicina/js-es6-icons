@@ -113,39 +113,50 @@ const icons = [
 	}
 ];
 
-const boxIconDom = document.getElementById('box-icon')
+const boxIconDom = document.getElementById('box-icon');
+const typeDom = document.getElementById('type');
 
 
-icons.forEach(icons => {
-    boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name}</p></div>`
- 
-});
-
+printIcons(icons, boxIconDom);
 
 
 
-const selectElement = document.getElementById('tipo');
+function printIcons(icone, container){
+    boxIconDom.innerHTML = ""
+    icone.forEach(icons => {
+        container.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name}</p></div>`
+     
+    });
 
-selectElement.addEventListener('change', function() {
+}
 
-    switch(tipo){
-        case "user":
-        boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name} <p>${icons.type}</p></p></div>`
-            break;
 
-            case "animal":
-            boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name} <p>${icons.type}</p></p></div>`
+typeDom.addEventListener('change', function(){
+    
+    const selected = this.value;
 
-            break;
+    if(this.value == ""){
+        printIcons(icons, boxIconDom);
 
-            case "vegetables":
-            boxIconDom.innerHTML += `<div class="icon-card"> <i class="${icons.prefix}solid ${icons.prefix}${icons.name}" style="color: ${icons.color}"></i> <p>${icons.name} <p>${icons.type}</p></p></div>`
+    } else {
+        const arrayFiltato = icons.filter(element => {
+            if(selected == element.type){
+                return true
+            } return false
 
-            break; 
+        })
+
+        printIcons(arrayFiltato, boxIconDom);
+
     }
 
-  
-});
+
+})
+
+
+
+
+
 
 
 
